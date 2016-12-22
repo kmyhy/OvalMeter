@@ -7,8 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "OvalMeter.h"
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet OvalMeter *ovalMeter;
+@property (weak, nonatomic) IBOutlet UIButton *btnAnimating;
 
 @end
 
@@ -23,6 +26,15 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+// MARK: - Actions
+- (IBAction)animating:(id)sender {
+    if(_ovalMeter.animating == NO){
+        [_ovalMeter startAnimating];
+    }else{
+        [_ovalMeter stopAnimating];
+    }
+    
 }
 
 

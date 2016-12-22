@@ -13,6 +13,9 @@
 		120DD8D91E07B0CB0047CFD4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 120DD8D71E07B0CB0047CFD4 /* Main.storyboard */; };
 		120DD8DB1E07B0CB0047CFD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 120DD8DA1E07B0CB0047CFD4 /* Assets.xcassets */; };
 		120DD8DE1E07B0CB0047CFD4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 120DD8DC1E07B0CB0047CFD4 /* LaunchScreen.storyboard */; };
+		120DD8E71E07B0E60047CFD4 /* PercentOval.m in Sources */ = {isa = PBXBuildFile; fileRef = 120DD8E61E07B0E60047CFD4 /* PercentOval.m */; };
+		120DD8EA1E07B8700047CFD4 /* OvalMeter.m in Sources */ = {isa = PBXBuildFile; fileRef = 120DD8E91E07B8700047CFD4 /* OvalMeter.m */; };
+		120DD8EC1E07B8820047CFD4 /* OvalMeter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 120DD8EB1E07B8820047CFD4 /* OvalMeter.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,11 @@
 		120DD8DA1E07B0CB0047CFD4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		120DD8DD1E07B0CB0047CFD4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		120DD8DF1E07B0CB0047CFD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		120DD8E51E07B0E60047CFD4 /* PercentOval.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PercentOval.h; sourceTree = "<group>"; };
+		120DD8E61E07B0E60047CFD4 /* PercentOval.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PercentOval.m; sourceTree = "<group>"; };
+		120DD8E81E07B8700047CFD4 /* OvalMeter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OvalMeter.h; sourceTree = "<group>"; };
+		120DD8E91E07B8700047CFD4 /* OvalMeter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OvalMeter.m; sourceTree = "<group>"; };
+		120DD8EB1E07B8820047CFD4 /* OvalMeter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OvalMeter.xib; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +66,7 @@
 		120DD8CD1E07B0CB0047CFD4 /* OvalMeter */ = {
 			isa = PBXGroup;
 			children = (
+				120DD8ED1E07CEA00047CFD4 /* customView */,
 				120DD8D11E07B0CB0047CFD4 /* AppDelegate.h */,
 				120DD8D21E07B0CB0047CFD4 /* AppDelegate.m */,
 				120DD8D41E07B0CB0047CFD4 /* ViewController.h */,
@@ -77,6 +86,18 @@
 				120DD8CF1E07B0CB0047CFD4 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		120DD8ED1E07CEA00047CFD4 /* customView */ = {
+			isa = PBXGroup;
+			children = (
+				120DD8E51E07B0E60047CFD4 /* PercentOval.h */,
+				120DD8E61E07B0E60047CFD4 /* PercentOval.m */,
+				120DD8E81E07B8700047CFD4 /* OvalMeter.h */,
+				120DD8E91E07B8700047CFD4 /* OvalMeter.m */,
+				120DD8EB1E07B8820047CFD4 /* OvalMeter.xib */,
+			);
+			name = customView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +159,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				120DD8DE1E07B0CB0047CFD4 /* LaunchScreen.storyboard in Resources */,
+				120DD8EC1E07B8820047CFD4 /* OvalMeter.xib in Resources */,
 				120DD8DB1E07B0CB0047CFD4 /* Assets.xcassets in Resources */,
 				120DD8D91E07B0CB0047CFD4 /* Main.storyboard in Resources */,
 			);
@@ -151,8 +173,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				120DD8D61E07B0CB0047CFD4 /* ViewController.m in Sources */,
+				120DD8E71E07B0E60047CFD4 /* PercentOval.m in Sources */,
 				120DD8D31E07B0CB0047CFD4 /* AppDelegate.m in Sources */,
 				120DD8D01E07B0CB0047CFD4 /* main.m in Sources */,
+				120DD8EA1E07B8700047CFD4 /* OvalMeter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
