@@ -22,13 +22,13 @@ PercentOval 用于绘制基本的饼图控件。它支持 IB 的可视化设计�
 
 在属性面板中，你可以通过如下属性定制 Ammeter 控件：
 
-@property(strong,nonatomic)IBInspectable UIColor* foreOvalColor;
-@property(strong,nonatomic)IBInspectable UIColor* bgOvalColor;
-@property(assign,nonatomic)IBInspectable CGFloat value;// between 0-1
-@property(assign,nonatomic)IBInspectable CGFloat startDegree;
-@property(assign,nonatomic)IBInspectable CGFloat ovalLineWidth;
-@property(assign,nonatomic)IBInspectable BOOL closeArc;// 封闭弧
-@property(strong,nonatomic)IBInspectable UIColor* fillColor;// 弧的填充色
+* @property(strong,nonatomic)IBInspectable UIColor* foreOvalColor;
+* @property(strong,nonatomic)IBInspectable UIColor* bgOvalColor;
+* @property(assign,nonatomic)IBInspectable CGFloat value;// between 0-1
+* @property(assign,nonatomic)IBInspectable CGFloat startDegree;
+* @property(assign,nonatomic)IBInspectable CGFloat ovalLineWidth;
+* @property(assign,nonatomic)IBInspectable BOOL closeArc;// 封闭弧
+* @property(strong,nonatomic)IBInspectable UIColor* fillColor;// 弧的填充色
 
 其中：
 
