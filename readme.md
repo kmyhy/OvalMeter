@@ -2,11 +2,7 @@
 
 一个饼图控件，可以饼图方式显示 0-1 之间的数值。同时支持自定义以及以动画方式显示：
 
-<div markdown="1">
-    <video autoplay loop muted markdown="1">
-        <source src="1.mp4" type="video/mp4" markdown="1" >
-    </video>
-</div>
+[![ScreenShot](2.png)](1.mp4)
 
 ##用法
 将如下文件导入到您的项目中：
