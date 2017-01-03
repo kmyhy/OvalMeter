@@ -10,7 +10,9 @@
 
 @interface OvalMeter(){
     NSTimer *timer;
-    CGFloat animatingValue;
+    CGFloat endValue;
+    CADisplayLink *displayLink;
+    Boolean isAnimating;
 }
 @property (strong, nonatomic) IBOutlet UIView *view;
 
@@ -37,8 +39,26 @@
     
     [_percentOval setup];
     [self addSubview:self.view];
+    displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(animateRing:)];
+    [displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
+    displayLink.paused = YES;
 }
-
+-(void)animateRing:(CADisplayLink *)sender{
+    if( endValue <= self.value){// 到达终点值，停止动画
+        self.value = endValue;
+        displayLink.paused = YES;
+        isAnimating = NO;
+    }else{
+        CGFloat speed = endValue/0.75;
+        CGFloat detalValue = sender.duration * speed;
+        
+        self.value += detalValue;
+    }
+}
+-(void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    [self startAnimating];
+}
 -(UIView*)loadViewFromNib{
     
     NSBundle *bundle = [NSBundle bundleForClass:[OvalMeter class]];
@@ -99,31 +119,17 @@
 -(BOOL)closeArc{
     return _percentOval.closeArc;
 }
-// MARK: - Timer Handler
+// MARK: - Start/stop animation
 -(void)startAnimating{
-    if(_animating){
-        [self stopAnimating];
+    if(isAnimating == NO){
+        endValue = self.value;
+        self.value = 0;
+        displayLink.paused = NO;
+        isAnimating = YES;
     }
-    _animating = YES;
-//    animatingValue = 0;
-    timer = [NSTimer scheduledTimerWithTimeInterval:0.03 target:self selector:@selector(timerHandler:) userInfo:nil repeats:YES];
 }
 -(void)stopAnimating{
-    if(timer!=nil){
-        [timer invalidate];
-    }
-//    self.value = _value;
-    _animating = NO;
+    displayLink.paused = YES;
 }
--(void)timerHandler:(NSTimer*)t{
-    animatingValue += self.value/30;
-    if(animatingValue >= self.value){
-        [self stopAnimating];
-        self.value = _value;
-        animatingValue = 0;
-    }else{
-        _percentOval.value = animatingValue;
-        _lbNumber.text = [NSString stringWithFormat:@"%.0f",_percentOval.value*100];
-    }
-}
+
 @end
